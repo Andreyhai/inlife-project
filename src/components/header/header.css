@@ -1,0 +1,11 @@
+@charset "UTF-8";
+body {
+  margin: 0; }
+  body .header {
+    /* шапка */
+    background: #FFFFFF;
+    border: 2px solid #000000; }
+    body .header__logo {
+      margin-left: 20px; }
+
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,33 @@
+@charset "UTF-8";
+.login {
+  /* рамка */
+  box-sizing: border-box;
+  position: absolute;
+  width: 146px;
+  height: 70px;
+  left: 139px;
+  top: 7px;
+  margin-left: 100px;
+  border: 1px solid #000000;
+  border-radius: 7px; }
+
+.login__profile {
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  box-shadow: none;
+  width: 50px;
+  height: 50px; }
+
+.login__text {
+  position: absolute;
+  left: 70px;
+  top: 20px;
+  font-size: 25px; }
+
+.login__text:hover {
+  cursor: pointer;
+  color: rgba(40, 31, 91, 0.97);
+  font-size: 30px; }
+
+/*# sourceMappingURL=Login.css.map */

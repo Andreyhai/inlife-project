@@ -1,0 +1,36 @@
+@charset "UTF-8";
+.SearchForCity {
+  /* Rectangle 2 */
+  box-sizing: border-box;
+  position: absolute;
+  width: 232px;
+  height: 38px;
+  right: 150px;
+  top: 23px;
+  background: rgba(255, 255, 255, 0.27);
+  border: 0.5px solid #000000;
+  border-radius: 15px; }
+  .SearchForCity__item {
+    /* город */
+    position: absolute;
+    width: 232px;
+    height: 39px;
+    left: 50px;
+    font-family: 'Jacques Francois';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000; }
+  .SearchForCity__menu {
+    /* меню */
+    position: absolute;
+    width: 69px;
+    height: 69px;
+    left: 1393px;
+    top: 7px; }
+
+/*# sourceMappingURL=SearchForCity.css.map */
