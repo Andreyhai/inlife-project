@@ -5,19 +5,17 @@
   .SearchForCity {
     /* Rectangle 2 */
 
-
-    width: 232px;
-    height: 38px;
     border: 0.5px solid #000000;
     border-radius: 15px;
+    cursor: pointer;
 
 
     &__item {
       /* город */
 
 
-      width: 232px;
-      height: 39px;
+      min-width: 232px; //длина города + отступы
+      min-height: 39px;
 
       font-family: 'Jacques Francois';
       font-style: normal;
@@ -36,6 +34,16 @@
 
       width: 69px;
       height: 69px;
+      cursor: pointer;
     }
+  }
+
+  .SearchForCity:hover {
+     background: rgba(229, 155, 155, 0.33);
+     &__item:hover {
+       color: white;
+     }
+
+     border: 0.5px solid white;
   }
 }
