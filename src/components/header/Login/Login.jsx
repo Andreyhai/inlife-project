@@ -7,10 +7,10 @@ function Login() {
     return (
       <Fragment>
         <div className={__COMPONENT__}>
-          <img className={__COMPONENT__+'__profile'} src={profile} alt='profile'/>
-          <span className={__COMPONENT__+'__text'}>
+          <img className={__COMPONENT__+'__profile-photo'} src={profile} alt='profile'/>
+          <div className={__COMPONENT__+'__text'}>
               login
-          </span>
+          </div>
         </div>
       </Fragment>
     );

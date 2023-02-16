@@ -3,12 +3,6 @@
   /* Навигация */
 
 
-  position: absolute;
-  width: 468px;
-  height: 25px;
-  left: 600px;
-  top: 27px;
-
   &__link {
     margin: 30px;
     text-decoration: none;
@@ -17,6 +11,5 @@
   }
   &__link:hover {
     color: black;
-    font-size: 30px;
   }
 }

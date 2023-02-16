@@ -7,7 +7,7 @@ import SearchForCity from "./Search-for-city/SearchForCity";
 function Header() {
     const __COMPONENT__ = "header";
     return (
-      <header className={__COMPONENT__} >
+      <header className={__COMPONENT__}>
         <div className={__COMPONENT__+'__logo'}>
           <Logotype />
         </div>
@@ -17,7 +17,6 @@ function Header() {
         <div className={__COMPONENT__+'__navigation'}>
             <Navigation />
         </div>
-
         <div className='header__search-for-city'>
           <SearchForCity />
         </div>
