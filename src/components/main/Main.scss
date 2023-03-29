@@ -1,8 +1,14 @@
 body {
-  .main {
-    background: rgba(215, 119, 119, 0.23);
-    height: 1000px;
-    max-width: 1500px;
+  background: #e7e1e1;
+  main {
     margin: 0 auto;
+    background: rgba(215, 119, 119, 0.23);
+    max-width: 1300px;
+    .wrapper {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-items: center;
+    }
   }
 }

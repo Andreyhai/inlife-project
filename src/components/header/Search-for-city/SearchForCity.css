@@ -1,36 +1,15 @@
-@charset "UTF-8";
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center; }
-  .wrapper .SearchForCity {
-    /* Rectangle 2 */
-    border: 0.5px solid #000000;
-    border-radius: 15px;
-    cursor: pointer; }
-    .wrapper .SearchForCity__item {
-      /* город */
-      min-width: 232px;
-      min-height: 39px;
-      font-family: 'Jacques Francois';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 26px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      color: #000000;
-      justify-content: center; }
-    .wrapper .SearchForCity__menu {
-      /* меню */
-      width: 69px;
-      height: 69px;
-      cursor: pointer; }
-  .wrapper .SearchForCity:hover {
-    background: rgba(229, 155, 155, 0.33);
-    border: 0.5px solid white; }
-    .wrapper .SearchForCity:hover__item:hover {
-      color: white; }
+body .SearchForCity {
+  border-radius: 20px;
+  min-height: 30px;
+  max-width: 130px;
+  padding: 10px;
+  text-align: center;
+  appearance: none; }
+  body .SearchForCity1 {
+    border-radius: 7px;
+    position: relative;
+    left: 30px;
+    background: white;
+    font-size: 90%; }
 
 /*# sourceMappingURL=SearchForCity.css.map */

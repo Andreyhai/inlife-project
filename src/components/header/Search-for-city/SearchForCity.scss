@@ -1,49 +1,20 @@
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  .SearchForCity {
-    /* Rectangle 2 */
+body {
 
-    border: 0.5px solid #000000;
-    border-radius: 15px;
-    cursor: pointer;
+  .SearchForCity{
 
+    border-radius: 20px;
+    min-height: 30px;
+    max-width: 130px;
+    padding: 10px;
+    text-align: center;
+    appearance: none;
 
-    &__item {
-      /* город */
-
-
-      min-width: 232px; //длина города + отступы
-      min-height: 39px;
-
-      font-family: 'Jacques Francois';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 26px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      color: #000000;
-      justify-content: center;
+    &1{
+      border-radius: 7px;
+      position: relative;
+      left: 30px;
+      background: white;
+      font-size: 90%;
     }
-
-    &__menu {
-      /* меню */
-
-      width: 69px;
-      height: 69px;
-      cursor: pointer;
-    }
-  }
-
-  .SearchForCity:hover {
-     background: rgba(229, 155, 155, 0.33);
-     &__item:hover {
-       color: white;
-     }
-
-     border: 0.5px solid white;
   }
 }

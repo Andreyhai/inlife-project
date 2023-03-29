@@ -1,0 +1,22 @@
+html body {
+  padding: 20px; }
+  html body button {
+    margin: 10px 15px 0px 0px;
+    height: 30px;
+    border-radius: 5px; }
+  html body .button-save {
+    background: #59ce4e;
+    color: white;
+    border: 1px solid #59ce4e; }
+  html body .button-clear {
+    background: #ff1825;
+    color: white;
+    border: 1px solid #ff1825; }
+  html body .button-clear:hover {
+    cursor: pointer;
+    background: #be0101; }
+  html body .button-save:hover {
+    cursor: pointer;
+    background: #15e000; }
+
+/*# sourceMappingURL=User.css.map */
