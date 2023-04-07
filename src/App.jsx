@@ -1,24 +1,23 @@
-import './App.css';
-import {Fragment} from "react";
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
-import Main from "./components/main/Main";
-import User from "./components/User/User";
-import SignIn from "./components/Pages/Login-page/SignIn";
-import AddUser from "./components/Pages/AddUser/AddUser";
+import {Component, Fragment} from "react";
+import Home from "./components/screens/Home/Home";
+import {BrowserRouter, Route, Routes, Link} from "react-router-dom";
+import Feedback from "./components/screens/Feedback/Feedback";
+import SignIn from "./components/screens/Authorization/SignIn/SignIn";
+import SignUp from "./components/screens/Authorization/SignUp/SignUp";
+import ErrorPage from "./components/screens/ErrorPage/ErrorPage";
 
-function App() {
-  return (
-      <Fragment>
-          {/*<Header />*/}
-          {/*<Main />*/}
-          {/*<Footer />*/}
-          {/*<User />*/}
-          {/*<SignIn />*/}
-          <AddUser/>
-
-      </Fragment>
-  );
+export default class App extends Component {
+    render() {
+        return (
+            <Fragment>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/signin' element={<SignIn />} />
+                    <Route path='/signup' element={<SignUp />} />
+                    <Route path='/feedback' element={<Feedback />} />
+                    <Route path='/*' element={<ErrorPage />} />
+                </Routes>
+            </Fragment>
+        );
+    }
 }
-
-export default App;
