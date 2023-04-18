@@ -15,7 +15,7 @@ const Form = () => {
         } else if(!validator.isStrongPassword(register.password, {minSymbols: 0})) {
             alert("Password must consist of one lowercase, uppercase letter and number, at least 8 characters")
         } else {
-            axios.post(DOMEN_SERVER + "/auth/login", {
+            axios.post(DOMEN_SERVER + "/auth/register", {
                 email: register.email,
                 password: register.password,
             }).then(res => {
