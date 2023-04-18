@@ -1,0 +1,57 @@
+/*header {*/
+/*  width: 1440px;*/
+/*  height: 65px;*/
+/*  background: #FFFFFF;*/
+/*  border-bottom: 1px solid #E2E2E2;*/
+/*  display: flex;*/
+/*  align-items: center; }*/
+/*  header .logo {*/
+/*    margin-left: 72px;*/
+/*    height: 50px;*/
+/*    mix-blend-mode: darken; }*/
+/*  header .navigation {*/
+/*    height: 100%;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    border-right: 1px solid #E2E2E2; }*/
+/*    header .navigation-link {*/
+/*      height: 19px;*/
+/*      text-decoration: none;*/
+/*      font-family: 'Hind Vadodara';*/
+/*      font-style: normal;*/
+/*      font-weight: 600;*/
+/*      font-size: 12.5px;*/
+/*      line-height: 19px;*/
+/*      list-style: none;*/
+/*      margin: 0 0 0 20px;*/
+/*      color: #000000;*/
+/*      font-size: 15px; }*/
+/*  header .addAdvert {*/
+/*    background: none;*/
+/*    border-radius: 10px;*/
+/*    background: #5863c9;*/
+/*    border: #5863c9;*/
+/*    width: 150px;*/
+/*    height: 25px;*/
+/*    font-size: 10px;*/
+/*    color: #FFFFFF;*/
+/*    margin: 0 5px 0 40px; }*/
+/*  header .addAdvert:hover {*/
+/*    background: #3a54c9;*/
+/*    color: #FFFFFF;*/
+/*    border: #3a54c9;*/
+/*    box-shadow: 5px 2px 2px #3b3dc9; }*/
+/*  header .profile-avatar {*/
+/*    width: 50px;*/
+/*    height: 50px;*/
+/*    border-radius: 50%;*/
+/*    background: #000; }*/
+
+/*nav {*/
+/*  margin: 0 40px 0 40px;*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-content: center;*/
+/*  align-items: center; }*/
+
+/*!*# sourceMappingURL=newHeader.css.map *!*/

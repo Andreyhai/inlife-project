@@ -1,3 +1,11 @@
+a {
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+}
+
 .wrapper {
     position: relative;
     width: 400px;
@@ -10,13 +18,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 .wrapper .form-box {
     width: 100%;
     padding: 40px;
-
 }
 
 .wrapper .form-box.register {
@@ -25,9 +31,8 @@
 }
 
 .wrapper .icon-close {
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: relative;
+
     width: 45px;
     height: 45px;
     background: #162938;
@@ -37,14 +42,9 @@
     justify-content: center;
     align-items: center;
     border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
     cursor: pointer;
     z-index: 1;
-}
-
-.form-box h2 {
-    font-size: 2em;
-    color: #162938;
-    text-align: center;
 }
 
 .input-box {
@@ -108,7 +108,6 @@
 
 .remember-forgot a {
     color: #162938;
-    text-decoration: none;
 }
 
 .remember-forgot a:hover {
@@ -118,15 +117,22 @@
 .btn {
     width: 100%;
     height: 45px;
-    background: #162938;
+    background: none;
     border: none;
     outline: none;
     border-radius: 6px;
+    border: 2px solid #162938;
     cursor: pointer;
     font-size: 1em;
-    color: #fff;
+    color: #162938;
     font-weight: 500;
     margin: 0;
+}
+
+.btn:hover {
+    color: white;
+    background: #162938;
+    transition: .5s;
 }
 
 .login-register {
@@ -139,10 +145,38 @@
 
 .login-register p a {
     color: #162938;
-    text-decoration: none;
     font-weight: 600;
 }
 
 .login-register p a:hover {
     text-decoration: underline;
+}
+
+
+
+.wrapper.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #162938;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #162938;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+button:hover {
+    color: white;
+    background: #162938;
+    transition: .5s;
 }

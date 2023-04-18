@@ -5,8 +5,8 @@
     top: 114px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: #7970E1;
-    border-radius: 15px;
+    background: #d8d3fc;
+    border-radius: 30px;
 }
 
 .block-1 {

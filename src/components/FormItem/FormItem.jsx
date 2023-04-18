@@ -11,7 +11,6 @@ export default class FormItem extends Component {
         this.type = props.type;
         this.labelName = props.labelName;
     }
-
     render() {
         return (
             <div className={'input-box'}>

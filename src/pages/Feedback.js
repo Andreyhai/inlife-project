@@ -1,8 +1,8 @@
 import React, {Component, Fragment} from "react";
 import styles from "./Feedback.module.css";
 import {Link} from "react-router-dom";
-import logo from "../../../images/new_лого.png";
-import image from "../../../images/img.png";
+import logo from "../sourse/images/new_лого.png";
+import image from "../sourse/images/img.png";
 export default class Feedback extends Component{
     render () {
         return (
@@ -14,7 +14,7 @@ export default class Feedback extends Component{
                     </div>
                     <div className="block-2">
                         <Link to="/">
-                            <div id={styles.one}>
+                            <div id={'one'}>
                                 <ion-icon name="close" />
                             </div></Link>
                         <h1 className={styles.tittle}>Обратная связь</h1>

@@ -1,5 +1,5 @@
-import {Component, Fragment} from "react";
-import Header from "./Header/Header";
+import {Component} from "react";
+import Header from "../components/Header/Header";
 
 export default class Home extends Component {
 
