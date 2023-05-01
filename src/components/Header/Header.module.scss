@@ -2,39 +2,50 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif; }
+  font-family: 'Poppins', sans-serif;
+}
 
 body {
-  background: url("https://img.freepik.com/free-vector/urban-city-background-for-video-conferencing_23-2148658554.jpg?w=1380&t=st=1680820366~exp=1680820966~hmac=87737bf0c95bb804e091494c75aa6d9ce4cb6fc90f6fc98ca768bba0b43af7c7") no-repeat;
-  background-size: cover; }
+  background: url('https://img.freepik.com/free-vector/urban-city-background-for-video-conferencing_23-2148658554.jpg?w=1380&t=st=1680820366~exp=1680820966~hmac=87737bf0c95bb804e091494c75aa6d9ce4cb6fc90f6fc98ca768bba0b43af7c7') no-repeat;
+  background-size: cover;
+}
 
 .header {
   width: 100%;
   height: 79px;
+
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.096) 36.98%, rgba(0, 0, 0, 0.069814) 95.31%, rgba(0, 0, 0, 0) 99.99%, rgba(0, 0, 0, 0) 100%);
   border-bottom: 1px solid #2945A7;
   backdrop-filter: blur(2px);
+
   display: flex;
   justify-items: center;
-  align-items: center; }
-  .header__logo {
+  align-items: center;
+
+  &__logo {
     display: flex;
     justify-items: center;
     align-items: center;
     width: 345px;
     height: 100%;
-    border-right: 1px solid #2945A7; }
-    .header__logo svg {
+    border-right: 1px solid #2945A7;
+
+    svg {
       width: 38px;
       height: 35px;
-      margin-left: 19px; }
-    .header__logo img {
+      margin-left: 19px;
+    }
+
+    img {
       margin-left: 36px;
       width: 96px;
-      height: 51px; }
-    .header__logo span {
+      height: 51px;
+    }
+
+    span {
       width: 90px;
       height: 51px;
+
       font-family: 'Inter';
       font-style: normal;
       font-weight: 400;
@@ -43,16 +54,19 @@ body {
       display: flex;
       align-items: center;
       text-align: center;
-      color: #2A0C69; }
-  .header__navigation {
+
+      color: #2A0C69;
+    }
+  }
+  &__navigation {
     width: 579px;
     height: 100%;
     border-right: 1px solid #2945A7;
     display: flex;
     justify-items: center;
     align-items: center;
-    justify-content: center; }
-    .header__navigation a {
+    justify-content: center;
+    a{
       position: relative;
       font-size: 1.1em;
       color: #162938;
@@ -68,8 +82,11 @@ body {
       display: flex;
       align-items: center;
       text-align: center;
-      color: #000000; }
-    .header__navigation a::after {
+
+      color: #000000;
+    }
+
+    a::after {
       content: '';
       position: absolute;
       left: 0;
@@ -80,38 +97,51 @@ body {
       border-radius: 5px;
       transform-origin: right;
       transform: scaleX(0);
-      transition: transform .5s; }
-    .header__navigation a:hover:after {
+      transition: transform .5s;
+    }
+
+    a:hover:after {
       transform-origin: left;
-      transform: scaleX(1); }
-  .header__logIn {
+      transform: scaleX(1);
+    }
+  }
+  &__logIn {
     display: flex;
     justify-items: center;
-    align-items: center; }
-    .header__logIn .btn {
+    align-items: center;
+    .btn {
       width: 76px;
       height: 36px;
       border: 1px solid black;
       border-radius: 5px;
       box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
-      margin-right: 20px; }
-    .header__logIn .btn1 {
+      margin-right: 20px;
+    }
+    .btn1 {
       width: 220px;
       height: 36px;
       border: 1px solid black;
       border-radius: 5px;
       box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
-      margin-right: 20px; }
-    .header__logIn .avatar {
+      margin-right: 20px;
+    }
+    .avatar {
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      border: 1px solid black; }
-    .header__logIn .icons {
+      border: 1px solid black;
+    }
+    .icons {
       display: flex;
       justify-items: center;
       align-items: center;
       margin-left: 40px;
-      width: 100px; }
+      width: 100px;
+    }
+  }
+}
 
-/*# sourceMappingURL=Header.module.css.map */
+
+
+
+
