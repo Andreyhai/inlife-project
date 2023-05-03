@@ -1,0 +1,50 @@
+.pincode {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.wrapper {
+    position: relative;
+    width: auto;
+    height: auto;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.pincode input[type="text"] {
+    display: inline-block;
+    width: 70px;
+    height: 80px;
+    line-height: 50px;
+    text-align: center;
+    border: 2px solid #5a5a5a;
+    color: #6f9611;
+    padding: 16px 0px;
+    margin: 0 10px;
+    font-size: 50px;
+    font-weight: 700;
+    outline: none;
+    /*background-color: #fff;*/
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 10px;
+    background: transparent;
+}
+.pincode input[type="text"]::-webkit-outer-spin-button,
+.pincode input[type="text"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.pincode input[type="text"]:focus {
+    border: 2px solid #1dd216;
+}

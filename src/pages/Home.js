@@ -1,9 +1,8 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import {ERROR_ROUTE} from "../utils/consts";
 import Header from "../components/Header/Header";
 import Aside from "../components/Asside/Aside";
 import MinHeader from "../components/MiniHeader/MinHeader";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -13,12 +12,7 @@ const Home = () => {
             <Aside />
             <MinHeader />
         </div>
-
-      home
-        <br/>
-        <Link to={ERROR_ROUTE}>
-            ошибка
-        </Link>
+        <Footer />
     </div>
   );
 };

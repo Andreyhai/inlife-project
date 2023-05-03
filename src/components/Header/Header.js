@@ -49,8 +49,8 @@ const Header = () => {
                     <img src={icon1} alt="icon1" style={{width:'20px'}}/>
                     <img src={icon2} alt="icon2" style={{width:'30px'}}/>
                     <img src={icon3} alt="icon3" style={{width:'20px'}}/></div>
-                <button className={style.btn1}><Link to={AUTHORISATION_ROUTE}>+Разместить объявление</Link></button>
-                {isAuth ? <img className={style.avatar} onClick={toggleIsAuth} src={logo} alt=""/> : <button className={style.btn} onClick={toggleIsAuth}><Link to={HOME_ROUTE}>Войти</Link></button>}
+                <button className={style.btn1}>+Разместить объявление</button>
+            {isAuth ? <img className={style.avatar} onClick={toggleIsAuth} src={logo} alt=""/> : <Link to={AUTHORISATION_ROUTE}><button className={style.btn} onClick={toggleIsAuth}>Войти</button></Link>}
             </div>
         </header>
     );
