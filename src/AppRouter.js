@@ -11,12 +11,17 @@ import Authorisation from "./pages/Authorisation";
 import Verification from "./pages/Veridication/Verification";
 
 const AppRouter = () => {
+    let x = 1
+
     return (
         <Routes>
             <Route path={HOME_ROUTE} element={<Home />} />
             <Route path={ERROR_ROUTE} element={<ErrorPage />} />
             <Route path={AUTHORISATION_ROUTE} element={<Authorisation />} />
-            <Route path={VERIFICATION_ROUTE} element={<Verification />} />
+            {
+                x && <Route path={VERIFICATION_ROUTE} element={<Verification />} />
+            }
+
         </Routes>
     );
 };

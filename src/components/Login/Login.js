@@ -43,7 +43,7 @@ let str = ""
                 </span>
                 <input type={type} onChange={(e) => {
                     str = e.target.value
-                }} />
+                }} autoComplete={"new-password"} />
                 <label>{labelName}</label>
             </div>
         );
@@ -60,18 +60,18 @@ let str = ""
                     </Link>
                     <div className="form-box">
                         <h2>Зарегистрироваться</h2>
-                        <form>
+                        {/*<form>*/}
                             <FormItem iconName={"mail"} type={"text"} labelName={"Mail"}/>
-                            {/*<FormItem iconName={"person"} type={"text"} labelName={"Firstname"}/>*/}
-                            {/*<FormItem iconName={"person"} type={"text"} labelName={"Lastname"}/>*/}
-                            {/*<FormItem iconName={"lock-closed"} type={"password"} labelName={"Password"} />*/}
-                            {/*<FormItem iconName={"lock-closed"} type={"password"} labelName={"Password"} />*/}
-                            {/*<Link to={VERIFICATION_ROUTE}>*/}
+                            <FormItem iconName={"person"} type={"text"} labelName={"Firstname"}/>
+                            <FormItem iconName={"person"} type={"text"} labelName={"Lastname"}/>
+                            <FormItem iconName={"lock-closed"} type={"password"} labelName={"Password"} />
+                            <FormItem iconName={"lock-closed"} type={"password"} labelName={"Password"} />
+                            <Link to={VERIFICATION_ROUTE}>
                                 <button type="submit" className="btn" onClick={(e) => log(e)}>
                                     Зарегистрироваться
                                 </button>
-                            {/*</Link>*/}
-                        </form>
+                            </Link>
+                        {/*</form>*/}
                     </div>
                 </div>
             </div>
