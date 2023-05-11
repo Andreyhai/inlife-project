@@ -5,12 +5,12 @@ import MinHeader from "../components/MiniHeader/MinHeader";
 import Footer from "../components/Footer/Footer";
 
 const Home = () => {
-  return (
+    return (
     <div>
         <Header />
         <div className="flex">
             <Aside />
-            <MinHeader />
+            {/*<MinHeader />*/}
         </div>
         <Footer />
     </div>

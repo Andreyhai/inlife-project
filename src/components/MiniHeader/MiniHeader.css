@@ -8,13 +8,13 @@
 }
 
 .purpleButton {
-    width: fit-content;
+    height: 30px;
     background: #CCD5FF;
     border: 0.5px solid #000000;
     border-radius: 11px;
     display: flex;
     justify-content: center;
-    padding: 0 10px;
+    padding: 5px 10px;
 }
 .miniPlaceholder {
     box-sizing: border-box;
@@ -26,12 +26,4 @@
     border: 0.5px solid #000000;
     border-radius: 11px;
     margin: 0 20px;
-}
-.purpleButton__icon {
-    width: 18px;
-    height: 18px;
-
-    display: flex;
-    align-self: center;
-    margin-left: 5px;
 }

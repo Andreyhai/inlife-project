@@ -1,21 +1,13 @@
 import React, {useState} from "react";
-
 import logo from "../../sourse/images/new_лого.png";
 import icon1 from "./svg/img.png"
 import icon2 from "./svg/img_1.png"
 import icon3 from "./svg/img_2.png"
-
-
 import style from "./Header.module.css"
-
 import "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js";
 import "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js";
-
-import {
-    AUTHORISATION_ROUTE,
-    HOME_ROUTE
-} from "../../utils/consts";
-import {Link} from "react-router-dom";
+import { SIGNIN_ROUTE } from "../../utils/consts";
+import { Link, useHref } from "react-router-dom";
 
 const Header = () => {
     const [isAuth, setIsAuth] = useState(false);
@@ -48,9 +40,12 @@ const Header = () => {
                 <div className={style.icons}>
                     <img src={icon1} alt="icon1" style={{width:'20px'}}/>
                     <img src={icon2} alt="icon2" style={{width:'30px'}}/>
-                    <img src={icon3} alt="icon3" style={{width:'20px'}}/></div>
+                    <img src={icon3} alt="icon3" style={{width:'20px'}}/>
+                </div>
                 <button className={style.btn1}>+Разместить объявление</button>
-            {isAuth ? <img className={style.avatar} onClick={toggleIsAuth} src={logo} alt=""/> : <Link to={AUTHORISATION_ROUTE}><button className={style.btn} onClick={toggleIsAuth}>Войти</button></Link>}
+                <Link to={SIGNIN_ROUTE}>
+                    <button className={style.btn} onClick={toggleIsAuth}>Войти</button>
+                </Link>
             </div>
         </header>
     );

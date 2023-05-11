@@ -1,13 +1,46 @@
-import React, {Fragment, useState} from 'react';
-import Header from "../../components/Header/Header";
-import {Button} from "react-bootstrap";
+import React, {Fragment, useEffect, useState} from 'react'
+import Header from "../../components/Header/Header"
 import "./verification.css"
-import {Link} from "react-router-dom";
-import {AUTHORISATION_ROUTE} from "../../utils/consts";
-import Footer from "../../components/Footer/Footer";
+import {Link} from "react-router-dom"
+import {LOGIN_ROUTE, VERIFICATION_ROUTE, PROFILE_ROUTE} from "../../utils/consts"
+import Footer from "../../components/Footer/Footer"
+import {code} from "../Authorisation/LogIn"
+import axios from "axios";
 
 const Verification = () => {
     const [input, setInput] = useState('')
+
+    console.log(code)
+
+    const register = () => {
+        axios.post(
+            "http://localhost:8080/auth/register",
+            {
+                "firstName" : localStorage.getItem("Firstname"),
+                "lastName" : localStorage.getItem("Lastname"),
+                "emailID" : localStorage.getItem("Mail"),
+                "password" : localStorage.getItem("Password1"),
+            }
+        ).then(res => {
+            localStorage.clear();
+            axios.get(
+                "http://localhost:8080",
+                {},
+                {"Authorization" : `Bearer ${res}`}
+            ).then(
+                rez => {
+                    for (const key in rez) {
+                        let val = rez[key];
+                        localStorage.setItem(key, val);
+                    }
+                }
+            )
+            localStorage.setItem("token", res)
+            return window.location.replace(PROFILE_ROUTE)
+        }).catch(err => {
+            console.log(err)
+        })
+    }
 
     return (
         <div>
@@ -25,18 +58,23 @@ const Verification = () => {
                         <div className='form-box'>
                             <h2 className="title">Введите 6-значный код из письма</h2>
                             <div className="pincode">
-                                <input type="text" maxLength={1} size={1}/>
-                                <input type="text" maxLength={1} size={1}/>
-                                <input type="text" maxLength={1} size={1}/>
-                                <input type="text" maxLength={1} size={1}/>
-                                <input type="text" maxLength={1} size={1}/>
-                                <input type="text" maxLength={1} size={1}/>
+                                <input type="text" maxLength={1} size={1} onChange={(e) => (setInput(input + e.target.value))}/>
+                                <input type="text" maxLength={1} size={1} onChange={(e) => (setInput(input + e.target.value))}/>
+                                <input type="text" maxLength={1} size={1} onChange={(e) => (setInput(input + e.target.value))}/>
+                                <input type="text" maxLength={1} size={1} onChange={(e) => (setInput(input + e.target.value))}/>
+                                <input type="text" maxLength={1} size={1} onChange={(e) => (setInput(input + e.target.value))}/>
+                                <input type="text" maxLength={1} size={1} onChange={(e) => (setInput(input + e.target.value))}/>
                             </div>
                             <div className={"flex justify-content-center"}>
-                                <Link to={AUTHORISATION_ROUTE}>
+                                <Link to={LOGIN_ROUTE}>
                                     <button className="btn1">назад</button>
                                 </Link>
-                                <button className="btn1">отправить</button>
+                                <button className="btn1" onClick={() => {
+                                    register()
+                                    if (input == code) {
+                                        return window.location.replace(PROFILE_ROUTE)
+                                    }
+                                }}>отправить</button>
                             </div>
                         </div>
                     </div>
