@@ -6,7 +6,7 @@ import "./Authorisation.css"
 import React, {Fragment, useState} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
-import {HOME_ROUTE, LOGIN_ROUTE, VERIFICATION_ROUTE} from "../../utils/consts";
+import {HOME_ROUTE, LOGIN_ROUTE, PROFILE_ROUTE, VERIFICATION_ROUTE} from "../../utils/consts";
 const SignIn = () => {
 
     const [Mail, setMail] = useState('');
@@ -21,11 +21,33 @@ const SignIn = () => {
                 "password" : Password,
             }
         ).then(res => {
-            if (res === "incorrect") {
+            if (res.data == "incorrect") {
                 alert("Введите корректный логин или пароль")
             } else {
+                
                 localStorage.clear();
-                localStorage.setItem("token", res)
+                axios.get(
+                    "http://localhost:8080/auth/info",
+                    {headers: {
+                        'Authorization': 'Bearer ' + res.data //the token is a variable which holds the token
+                        
+                    }}
+                ).then(
+                    
+                    rez => {
+                        
+                        for (const key in rez.data) {
+                            let val = rez.data[key];
+                            localStorage.setItem(key, val);
+                        }
+                    }
+                ).catch(
+                    err => {
+                        console.log(err)
+                    }
+                )
+                localStorage.setItem("token", res.data)
+                return window.location.replace(PROFILE_ROUTE)
             }
         }).catch(() => {
             console.log("Не отправилось!")

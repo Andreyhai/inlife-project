@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HOME_ROUTE } from '../utils/consts';
+import { HOME_ROUTE } from '../../utils/consts';
 
 export default function Example() {
     return (

@@ -8,10 +8,15 @@ import React, {Fragment, useState} from "react";
 import {Link, redirect} from "react-router-dom";
 import { SIGNIN_ROUTE, VERIFICATION_ROUTE } from "../../utils/consts";
 
-function getRand(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min
+function randomInteger(min, max) {
+    let rand = min + Math.random() * (max - min);
+    return Math.round(rand);
+    }
+    let rez = ""
+    for (let i = 0; i < 6; i++) {
+    rez += randomInteger(0, 9);
 }
-export const code = getRand(100000, 999999)
+
 const LogIn = () => {
 
     redirect("/")
@@ -23,11 +28,10 @@ const LogIn = () => {
     const [Password2, setPassword2] = useState('');
 
     const sendData = () => {
-        localStorage.setItem("Mail", Mail);
-        localStorage.setItem("Firstname", Firstname);
-        localStorage.setItem("Lastname", Lastname);
-        localStorage.setItem("Password1", Password1);
-        localStorage.setItem("Password2", Password2);
+        localStorage.setItem("emailID", Mail);
+        localStorage.setItem("firstName", Firstname);
+        localStorage.setItem("lastName", Lastname);
+        localStorage.setItem("password", Password1);
     }
 
 
@@ -36,11 +40,12 @@ const LogIn = () => {
 
     const sendCode = (e) => {
         e.preventDefault()
+        localStorage.setItem("code",rez);
         axios.post(
             "http://localhost:8080/send",
             {
                 "recipient": Mail,
-                "code": code
+                "code": rez
             }
         ).then(res => {
             if (res) {
