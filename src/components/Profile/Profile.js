@@ -3,8 +3,11 @@ import { listOfAdverts } from "../listOfAdverts"
 import Advert from "../Advert/Advert";
 
 const Profile = (props) => {
+    
     return (
+        
         <div className='profile__adverts flex flex-wrap border-r-indigo-700 border-l-indigo-700 border-l border-r justify-center' style={{margin: "0 auto",paddingTop: "100px", maxWidth: "1500px", minWidth: "300px"}}>
+            
             <div className='profile__adverts flex flex-wrap justify-center w-full' style={{margin: "0 auto"}}>
                 {/* <div className='profile'> */}
                 <div className="w-full mx-11 mb-11">
@@ -50,9 +53,10 @@ const Profile = (props) => {
                         })
                     }
                 </div>
-            </div>
+        </div>
         </div>
     );
 }
 
 export default Profile
+
