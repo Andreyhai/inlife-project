@@ -4,10 +4,12 @@ import "./verification.css"
 import {Link} from "react-router-dom"
 import {LOGIN_ROUTE, VERIFICATION_ROUTE, PROFILE_ROUTE} from "../../utils/consts"
 import Footer from "../../components/Footer/Footer"
-import {code} from "../Authorisation/LogIn"
 import axios from "axios";
 
+const code = localStorage.getItem("code");
+
 const Verification = () => {
+    
     const [input, setInput] = useState('')
 
     console.log(code)
@@ -16,26 +18,28 @@ const Verification = () => {
         axios.post(
             "http://localhost:8080/auth/register",
             {
-                "firstName" : localStorage.getItem("Firstname"),
-                "lastName" : localStorage.getItem("Lastname"),
-                "emailID" : localStorage.getItem("Mail"),
-                "password" : localStorage.getItem("Password1"),
+                "firstName" : localStorage.getItem("firstName"),
+                "lastName" : localStorage.getItem("lastName"),
+                "emailID" : localStorage.getItem("emailID"),
+                "password" : localStorage.getItem("password"),
             }
         ).then(res => {
             localStorage.clear();
             axios.get(
-                "http://localhost:8080",
+                "http://localhost:8080/auth/info",
                 {},
-                {"Authorization" : `Bearer ${res}`}
+                {"Authorization" : `Bearer ${res.data}`}
             ).then(
                 rez => {
-                    for (const key in rez) {
-                        let val = rez[key];
+                    if (rez.data == "auth/login") alert("NO!!!")
+                    else{
+                    for (const key in rez.data) {
+                        let val = rez.data[key];
                         localStorage.setItem(key, val);
-                    }
+                    }}
                 }
             )
-            localStorage.setItem("token", res)
+            localStorage.setItem("token", res.data)
             return window.location.replace(PROFILE_ROUTE)
         }).catch(err => {
             console.log(err)
@@ -58,12 +62,15 @@ const Verification = () => {
                         <div className='form-box'>
                             <h2 className="title">Введите 6-значный код из письма</h2>
                             <div className="pincode">
-                                <input type="text" maxLength={1} size={1} onChange={(e) => (setInput(input + e.target.value))}/>
-                                <input type="text" maxLength={1} size={1} onChange={(e) => (setInput(input + e.target.value))}/>
-                                <input type="text" maxLength={1} size={1} onChange={(e) => (setInput(input + e.target.value))}/>
-                                <input type="text" maxLength={1} size={1} onChange={(e) => (setInput(input + e.target.value))}/>
-                                <input type="text" maxLength={1} size={1} onChange={(e) => (setInput(input + e.target.value))}/>
-                                <input type="text" maxLength={1} size={1} onChange={(e) => (setInput(input + e.target.value))}/>
+                                <input className='input1' type="text" maxLength={1} size={1} onChange={(e) => {(setInput(input + e.target.value)); document.querySelector('.input2').focus()}}/>
+                                <input className='input2' type="text" maxLength={1} size={1} onChange={(e) => {(setInput(input + e.target.value)); document.querySelector('.input3').focus()}}/>
+                                <input className='input3' type="text" maxLength={1} size={1} onChange={(e) => {(setInput(input + e.target.value)); document.querySelector('.input4').focus()}}/>
+                                <input className='input4' type="text" maxLength={1} size={1} onChange={(e) => {(setInput(input + e.target.value)); document.querySelector('.input5').focus()}}/>
+                                <input className='input5' type="text" maxLength={1} size={1} onChange={(e) => {(setInput(input + e.target.value)); document.querySelector('.input6').focus()}} />
+                                <input className='input6' type="text" maxLength={1} size={1} onChange={(e) => {(setInput(input + e.target.value)); register()
+                                    if (input == code) {
+                                        return window.location.replace(PROFILE_ROUTE)
+                                }}}/>
                             </div>
                             <div className={"flex justify-content-center"}>
                                 <Link to={LOGIN_ROUTE}>
