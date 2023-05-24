@@ -1,15 +1,14 @@
-import React from 'react';
 import Header from '../../components/Header/Header';
 import { Container, Row, Col } from 'react-bootstrap';
 import Sidebar from '../../components/SideBar/SideBar';
-import Profile from '../../components/Profile/Profile';
-import axios from "axios";
-import {VERIFICATION_ROUTE} from "../../utils/consts";
+    import Profile from '../../components/Profile/Profile';
+    import axios from "axios";
+    import {VERIFICATION_ROUTE} from "../../utils/consts";
 
-const db = [
+    const db = [
 
-]
-const ProfilePage = (props) => {
+    ]
+    const ProfilePage = (props) => {
 
     if (!props.isAuth)
         window.location.replace("/login")
@@ -21,14 +20,27 @@ const ProfilePage = (props) => {
         ).then(response => {
             if (response) {
                 // sendData();
-                db.push(response)
+                for (const responseKey in response) {
+                    const x = {
+                        responseKey: response[responseKey]
+                    }
+                    db.push(x)
+                }
             }
         }).catch(() => {
             alert("Некорректная почта!")
         })
     }
 
-
+    return (
+        <div>
+            <Header isAuth={true}/>
+            <div className='flex'>
+                <Sidebar isAuth={1}/>
+                <Profile data={db}/>
+            </div>
+        </div>
+)
 };
 
 export default ProfilePage;
