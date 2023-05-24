@@ -1,0 +1,56 @@
+.advert {
+  width: 257px;
+  height: 324px;
+background: transparent;
+border-radius: 30px;
+margin: 30px 10px;
+backdrop-filter: blur(100px);
+border: 0.5px dashed #8460d6;
+}
+
+.advert__title {
+  display: grid; 
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 30px;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.advert__title-title {
+  grid-column: 1/3;
+  grid-row: 1/2;
+margin-top: 5px;
+}
+.advert__title-icon {
+  width: 20px;
+  height: 20px;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  margin: 5px;
+}
+
+.advert__img {
+  width: 257px;
+height: 179px;
+}
+
+.advert__info {
+  padding-left: 15px;
+}
+
+.advert__img>img {
+  width: 100%;
+  height: 100%;
+}
+
+.advert__footer-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+}
+
+.advert__footer-title {
+  justify-self: start;
+  margin-left: 15px;
+}
