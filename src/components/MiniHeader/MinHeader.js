@@ -10,7 +10,6 @@ import buildings from "./images/free-icon-font-building-3915161.png"
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { PROFILE_ROUTE } from '../../utils/consts';
-// import { render } from 'react-dom';
 const MinHeader = () => {
     
     function componentDidMount() {
@@ -21,8 +20,7 @@ const MinHeader = () => {
     }
 
     return (
-        <div className="miniHeader flex" style={{minWidth: "1836px", maxWidth:"2500px"}}>
-
+        <div className="miniHeader flex">
             <div className="h-full w-full">
                 <div className="w-full h-1/3 flex justify-center ">
                     <div className="purpleButton w-30 h-30 pb30" style={{marginRight:"5px"}}>

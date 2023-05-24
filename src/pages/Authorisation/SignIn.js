@@ -24,18 +24,14 @@ const SignIn = () => {
             if (res.data == "incorrect") {
                 alert("Введите корректный логин или пароль")
             } else {
-                
                 localStorage.clear();
                 axios.get(
                     "http://localhost:8080/auth/info",
                     {headers: {
                         'Authorization': 'Bearer ' + res.data //the token is a variable which holds the token
-                        
                     }}
                 ).then(
-                    
                     rez => {
-                        
                         for (const key in rez.data) {
                             let val = rez.data[key];
                             localStorage.setItem(key, val);
@@ -56,10 +52,8 @@ const SignIn = () => {
 
     return (
         <div>
-            <Header />
-            <div style={{
+            <div className="h-screen" style={{
                 width: "100%",
-                height: "946px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center"
@@ -112,7 +106,6 @@ const SignIn = () => {
                     </div>
                 </Fragment>
             </div>
-            <Footer />
         </div>
     );
 };

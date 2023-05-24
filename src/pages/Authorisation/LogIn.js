@@ -27,16 +27,12 @@ const LogIn = () => {
     const [Password1, setPassword1] = useState('');
     const [Password2, setPassword2] = useState('');
 
-    const sendData = () => {
-        localStorage.setItem("emailID", Mail);
-        localStorage.setItem("firstName", Firstname);
-        localStorage.setItem("lastName", Lastname);
-        localStorage.setItem("password", Password1);
-    }
-
-
-
-
+    // const sendData = () => {
+    //     localStorage.setItem("emailID", Mail);
+    //     localStorage.setItem("firstName", Firstname);
+    //     localStorage.setItem("lastName", Lastname);
+    //     localStorage.setItem("password", Password1);
+    // }
 
     const sendCode = (e) => {
         e.preventDefault()
@@ -49,7 +45,7 @@ const LogIn = () => {
             }
         ).then(res => {
             if (res) {
-                sendData();
+                // sendData();
                 return window.location.replace(VERIFICATION_ROUTE)
             }
         }).catch(() => {
@@ -59,13 +55,11 @@ const LogIn = () => {
 
     return (
         <div>
-            <Header />
-            <div style={{
+            <div className="h-screen" style={{
                 width: "100%",
-                height: "946px",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center"
+                justifyContent: "center",
             }}>
                 <Fragment>
                     <div>
@@ -149,7 +143,6 @@ const LogIn = () => {
                     </div>
                 </Fragment>
             </div>
-            <Footer />
         </div>
     );
 };
