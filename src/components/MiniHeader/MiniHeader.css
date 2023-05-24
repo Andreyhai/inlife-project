@@ -3,7 +3,6 @@
 .miniHeader {
     width: 100%;
     height: 206px;
-    border-left: 1px solid #2945A7;
     background: #EAECFF;
     padding: 10px;
     display: flex;

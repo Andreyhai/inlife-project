@@ -7,11 +7,12 @@ import Advert from '../../components/Advert/Advert';
 import Sidebar from '../../components/SideBar/SideBar';
 import { listOfAdverts, listOfAdverts1 } from '../../components/listOfAdverts';
 import Pagination from 'react-bootstrap/Pagination';
-console.log(
-    listOfAdverts.length
-)
-const Home = () => {
+import axios from "axios"
+import {VERIFICATION_ROUTE} from "../../utils/consts";
 
+const Home = (props) => {
+    if (!props.isAuth)
+        window.location.replace("/login")
     const [active, setActive] = useState(1)
     let items = [];
     for (let number = 1; number <= 5; number++) {
@@ -27,18 +28,19 @@ const Home = () => {
     const PaginationBasic = () => {
         return <Pagination>{items}</Pagination>
     }
-
-
-
+console.log(props.isAuth)
     return (
     <div className=''>
-        <Header />
+
         <div className="flex justify-center" style={{minWidth: "1722px",
   maxWidth: "2500px", width: "min-contend", margin: "0 auto"}}>
-            <Sidebar isAuth={true} />
+
+
             <div className='w-full'>
-                <MinHeader />
-                <div className='flex flex-wrap border-r-indigo-700 border-l-indigo-700 border-l border-r justify-center' style={{margin: "0 auto",paddingTop: "100px", maxWidth: "1500px", minWidth: "300px"}}>
+                <div className='flex flex-wrap border-r-indigo-700 border-l-indigo-700 border-l border-r justify-center' style={{margin: "0 auto",paddingTop: "0px", maxWidth: "1500px", minWidth: "300px"}}>
+                    <Header />
+                    <MinHeader />
+                    <Sidebar isAuth={props.isAuth} />
                     {   active === 1 && listOfAdverts.map(index => {
                             return <Advert key={index.id} index={index} />
                         })

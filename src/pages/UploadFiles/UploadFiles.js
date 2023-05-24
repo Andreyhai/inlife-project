@@ -1,7 +1,11 @@
 import React from 'react';
 import UploadFiles from '../../components/upload-files.component';
 import Header from '../../components/Header/Header';
-const UploadFilesPage = () => {
+const UploadFilesPage = (props) => {
+
+  if (!props.isAuth)
+    window.location.replace("/login")
+
   return (
     <React.Fragment>
     <Header />

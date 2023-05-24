@@ -1,13 +1,19 @@
 .advert {
   width: 257px;
-  height: 324px;
-background: transparent;
-border-radius: 30px;
-margin: 30px 10px;
-backdrop-filter: blur(100px);
+  height: 326px;
+/*background: transparent;*/
+  border-radius: 30px;
+
+margin: 30px 0px;
+/*backdrop-filter: blur(100px);*/
 border: 0.5px dashed #8460d6;
 }
 
+.advertt{
+  width: 257px;
+  height: 324px;
+  border-radius: 30px;
+}
 .advert__title {
   display: grid; 
   grid-template-columns: 80% 20%;
@@ -53,4 +59,8 @@ height: 179px;
 .advert__footer-title {
   justify-self: start;
   margin-left: 15px;
+}
+
+.rrr{
+  top: 100px;
 }
