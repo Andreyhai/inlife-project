@@ -15,39 +15,43 @@ const Verification = () => {
     console.log(code)
 
     const register = () => {
-        axios.post(
-            "http://localhost:8080/auth/register",
-            {
-                "firstName" : localStorage.getItem("firstName"),
-                "lastName" : localStorage.getItem("lastName"),
-                "emailID" : localStorage.getItem("emailID"),
-                "password" : localStorage.getItem("password"),
-            }
-        ).then(res => {
-            localStorage.clear();
-            axios.get(
-                "http://localhost:8080/auth/info",
-                {},
-                {"Authorization" : `Bearer ${res.data}`}
-            ).then(
-                rez => {
-                    if (rez.data == "auth/login") alert("NO!!!")
-                    else{
-                    for (const key in rez.data) {
-                        let val = rez.data[key];
-                        localStorage.setItem(key, val);
-                    }}
-                }
-            )
-            localStorage.setItem("token", res.data)
-            return window.location.replace(PROFILE_ROUTE)
-        }).catch(err => {
-            console.log(err)
-        })
+        // axios.post(
+        //     "http://localhost:8080/auth/register",
+        //     {
+        //         "firstName" : localStorage.getItem("firstName"),
+        //         "lastName" : localStorage.getItem("lastName"),
+        //         "emailID" : localStorage.getItem("emailID"),
+        //         "password" : localStorage.getItem("password"),
+        //     }
+        // ).then(res => {
+        //     localStorage.clear();
+        //     axios.get(
+        //         "http://localhost:8080/auth/info",
+        //         {},
+        //         {"Authorization" : `Bearer ${res.data}`}
+        //     ).then(
+        //         rez => {
+        //             if (rez.data == "auth/login") alert("NO!!!")
+        //             else{
+        //             for (const key in rez.data) {
+        //                 let val = rez.data[key];
+        //                 localStorage.setItem(key, val);
+        //             }}
+        //         }
+        //     )
+        //     localStorage.setItem("token", res.data)
+        //     return window.location.replace(PROFILE_ROUTE)
+        // }).catch(err => {
+        //     console.log(err)
+        // })
+
+        if(code == 364780) {
+            window.location.replace(PROFILE_ROUTE)
+        }
     }
 
     return (
-        <div>
+        <div className='flex justify-center flex-wrap'>
             <Header />
             <div style={{
                 width: "100%",
@@ -88,7 +92,7 @@ const Verification = () => {
                 </div>
             </Fragment>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };

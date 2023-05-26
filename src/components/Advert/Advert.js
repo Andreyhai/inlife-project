@@ -22,13 +22,13 @@ const Advert = (props) => {
     return (
 
 
-        <Link to={ADVERT_PAGE_ROUTE} className="advertt group relative block m-2">
-            <span className="mt-5 advertt absolute inset-0 border-2 border-dashed border-black "></span>
+        <Link to={ADVERT_PAGE_ROUTE} className="mb-72 group relative block mr-4">
+            <span className="mt-0 advertt absolute inset-0 border-2 border-dashed border-black "></span>
                 {/*<div*/}
                 {/*    // className="advertt transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 transform !pt-4 transition-opacity group-hover:absolute group-hover:opacity-1"*/}
                 {/*>*/}
 
-                    <div className='advert transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 transform !pt-4 transition-opacity group-hover:absolute group-hover:opacity-1'>
+                    <div className='m-0 advert transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 transform !pt-4 transition-opacity group-hover:absolute group-hover:opacity-1'>
                         <div className='advert__title'>
                             <div className='advert__title-title'>
                                 {props.index.type}

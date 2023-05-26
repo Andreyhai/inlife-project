@@ -77,6 +77,7 @@ export default class UploadFiles extends Component {
       fileInfos,
     } = this.state;
 
+    
     return (
       <div className="w-1/2 h-1/3 flex flex-wrap items-center justify-center">
         {currentFile && (
@@ -87,7 +88,7 @@ export default class UploadFiles extends Component {
               aria-valuenow={progress}
               aria-valuemin="0"
               aria-valuemax="100"
-              style={{ width: progress + "%" }}
+              style={{ width: 100 + "%" }}
             >
               {/* {progress}% */}
             </div>
@@ -107,15 +108,19 @@ export default class UploadFiles extends Component {
         </div> */}
 
         {
-          selectedFiles && <button className="btn btn-success"
-          disabled={!selectedFiles}
-          onClick={this.upload}
+          1 && <button className="btn btn-success"
+          disabled={0}
+          onClick={(e) => {
+            e.preventDefault();
+            localStorage.setItem("var1", "true")
+            window.location.replace("/profile1")
+          }}
         >
           Upload
         </button>
         }
 
-        <div className="alert alert-light" role="alert">
+        {/* <div className="alert alert-light" role="alert">
           {message}
           тут будут ошибки
         </div>
@@ -129,7 +134,7 @@ export default class UploadFiles extends Component {
                 </li>
               ))}
           </ul>
-        </div>
+        </div> */}
       </div>
     );
   }

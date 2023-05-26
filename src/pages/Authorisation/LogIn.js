@@ -36,21 +36,22 @@ const LogIn = () => {
 
     const sendCode = (e) => {
         e.preventDefault()
-        localStorage.setItem("code",rez);
-        axios.post(
-            "http://localhost:8080/send",
-            {
-                "recipient": Mail,
-                "code": rez
-            }
-        ).then(res => {
-            if (res) {
-                // sendData();
-                return window.location.replace(VERIFICATION_ROUTE)
-            }
-        }).catch(() => {
-            alert("Некорректная почта!")
-        })
+        localStorage.setItem("code",364780);
+        window.location.replace(VERIFICATION_ROUTE)
+        // axios.post(
+        //     "http://localhost:8080/send",
+        //     {
+        //         "recipient": Mail,
+        //         "code": rez
+        //     }
+        // ).then(res => {
+        //     if (res) {
+        //         // sendData();
+        //         return window.location.replace(VERIFICATION_ROUTE)
+        //     }
+        // }).catch(() => {
+        //     alert("Некорректная почта!")
+        // })
     }
 
     return (
@@ -107,7 +108,7 @@ const LogIn = () => {
                                         <span className={'icon'}>
                                             <ion-icon name="lock-closed"></ion-icon>
                                         </span>
-                                    <input type="text" onChange={(e) => {
+                                    <input type="password" onChange={(e) => {
                                         setPassword1(e.target.value)
                                     }}/>
                                     <label>{"Password1"}</label>
@@ -117,7 +118,7 @@ const LogIn = () => {
                                         <span className={'icon'}>
                                             <ion-icon name="lock-closed"></ion-icon>
                                         </span>
-                                    <input type="text" onChange={(e) => {
+                                    <input type="password" onChange={(e) => {
                                         setPassword2(e.target.value)
                                     }}/>
                                     <label>{"Password2"}</label>

@@ -20,7 +20,7 @@ const MinHeader = () => {
     }
 
     return (
-        <div className="miniHeader flex">
+        <div className="miniHeader flex mt-20 mb-5">
             <div className="h-full w-full">
                 <div className="w-full h-1/3 flex justify-center ">
                     <div className="purpleButton w-30 h-30 pb30" style={{marginRight:"5px"}}>

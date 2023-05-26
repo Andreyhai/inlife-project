@@ -6,7 +6,7 @@ import icon3 from "./svg/img_2.png"
 import style from "./Header.module.css"
 import "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js";
 import "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js";
-import { ERROR_ROUTE, HOME_ROUTE, SIGNIN_ROUTE, UPLOAD_ROUTE } from "../../utils/consts";
+import { ADD_ADVERT_PAGE_ROUTE, ERROR_ROUTE, HOME_ROUTE, SIGNIN_ROUTE, UPLOAD_ROUTE } from "../../utils/consts";
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
@@ -14,17 +14,22 @@ const Header = (props) => {
 
     const isAuth = props.isAuth
     return (
-        <div style={
-            {
-  width: "100%",
-  height: "79px",
-  background: "linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.096) 36.98%, rgba(0, 0, 0, 0.069814) 95.31%, rgba(0, 0, 0, 0) 99.99%, rgba(0, 0, 0, 0) 100%)",
-  borderBottom: "1px solid #2945A7",
-  WebkitBackdropFilter: "blur(2px)",
-         backdropFilter: "blur(2px)",
-}
-        }>
-            <header className={style.header}>
+        
+
+
+        
+//         <div className="fixed" style={
+//             {
+//   width: "100%",
+//   maxWidth:"max-contend",
+//   height: "79px",
+//   background: "linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.096) 36.98%, rgba(0, 0, 0, 0.069814) 95.31%, rgba(0, 0, 0, 0) 99.99%, rgba(0, 0, 0, 0) 100%)",
+//   borderBottom: "1px solid #2945A7",
+//   WebkitBackdropFilter: "blur(2px)",
+//          backdropFilter: "blur(2px)",
+// }
+        // }>
+            <header className={`${style.header}`}>
             <div className={`${style.header__logo}`}>
                 <svg  width="38" height="35" viewBox="0 0 38 35" fill="none" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
                     <rect width="38" height="35" fill="url(#pattern0)"/>
@@ -49,26 +54,36 @@ const Header = (props) => {
                 <div className={style.right}>
                     <div className={style.header__logIn}>
                 <nav className={style.icons}>
-                    <img src={icon1} alt="icon1" style={{width:'20px'}}/>
+                    {/* <img src={icon1} alt="icon1" style={{width:'20px'}}/> */}
                     <img src={icon2} alt="icon2" style={{width:'30px'}}/>
                     <img src={icon3} alt="icon3" style={{width:'20px'}}/>
                 </nav>
-                <Link to={UPLOAD_ROUTE}>
+                <Link to={"/addadvert"}>
                     <button className={style.btn1}>+Разместить объявление</button>
                 </Link>
                 <Link to={SIGNIN_ROUTE}>
+                <div className="flex flex-nowrap items-center">
+
+                
                 {
-                    !isAuth && <button className={style.btn}>Войти</button>
+                    !props.url && <button className={style.btn}>Войти</button>
+                }
+                
+                {
+                    props.url && <img src="https://cdn-icons-png.flaticon.com/512/8188/8188349.png" className="w-12 h-12 rounded-full" />
+                }{
+                    props.url && <div className="pl-3">Davit Mangasaryan</div>
                 }
                 {
                     isAuth && <div className="rounded-full bg-black w-10 h-10"></div>
                 } 
+                </div>
                 </Link>
             </div>
                 </div>
             
             </header>
-        </div>
+        // </div>
         
     );
 };

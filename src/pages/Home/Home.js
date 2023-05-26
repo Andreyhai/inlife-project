@@ -11,8 +11,8 @@ import axios from "axios"
 import {VERIFICATION_ROUTE} from "../../utils/consts";
 
 const Home = (props) => {
-    if (!props.isAuth)
-        window.location.replace("/login")
+    // if (!props.isAuth)
+    //     window.location.replace("/login")
     const [active, setActive] = useState(1)
     let items = [];
     for (let number = 1; number <= 5; number++) {
@@ -37,11 +37,16 @@ console.log(props.isAuth)
 
 
             <div className='w-full'>
-                <div className='flex flex-wrap border-r-indigo-700 border-l-indigo-700 border-l border-r justify-center' style={{margin: "0 auto",paddingTop: "0px", maxWidth: "1500px", minWidth: "300px"}}>
+                <div className='flex flex-wrap border-r-indigo-700 border-l-indigo-700 border-l border-r justify-center' style={{margin: "0 auto",paddingTop: "0px", maxWidth: "1460px", minWidth: "300px"}}>
                     <Header />
                     <MinHeader />
                     <Sidebar isAuth={props.isAuth} />
-                    {   active === 1 && listOfAdverts.map(index => {
+                    <div className='flex flex-wrap justify-center w-5/6'>
+                    <div className='w-full flex justify-center mb-10'>
+                    <PaginationBasic />
+
+                    </div>
+                    {   active === 1 && listOfAdverts1.map(index => {
                             return <Advert key={index.id} index={index} />
                         })
                     }
@@ -49,7 +54,9 @@ console.log(props.isAuth)
                             return <Advert key={index.id} index={index} />
                         })
                     }
-                    <PaginationBasic />
+                    </div>
+                    
+                    {/* <PaginationBasic /> */}
                 </div>
                 
             </div>
