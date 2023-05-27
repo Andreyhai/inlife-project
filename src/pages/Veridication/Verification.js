@@ -45,9 +45,9 @@ const Verification = () => {
         //     console.log(err)
         // })
 
-        if(code == 364780) {
+        // if(code == 364780) {
             window.location.replace(PROFILE_ROUTE)
-        }
+        // }
     }
 
     return (
@@ -82,9 +82,9 @@ const Verification = () => {
                                 </Link>
                                 <button className="btn1" onClick={() => {
                                     register()
-                                    if (input == code) {
-                                        return window.location.replace(PROFILE_ROUTE)
-                                    }
+                                    // if (input == code) {
+                                    //     return window.location.replace(PROFILE_ROUTE)
+                                    // }
                                 }}>отправить</button>
                             </div>
                         </div>

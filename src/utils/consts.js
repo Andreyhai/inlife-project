@@ -7,5 +7,5 @@ export const UPLOAD_ROUTE = '/upload';
 export const ERROR_ROUTE = '/*';
 export const ADVERT_PAGE_ROUTE = '/advertpage';
 export const ADD_ADVERT_PAGE_ROUTE = '/addadvert';
-export const PROFILE1_PAGE_ROUTE = '/profile1';
+export const PROFILE1_PAGE_ROUTE = '/prоfile';
 

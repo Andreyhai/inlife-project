@@ -113,7 +113,7 @@ export default class UploadFiles extends Component {
           onClick={(e) => {
             e.preventDefault();
             localStorage.setItem("var1", "true")
-            window.location.replace("/profile1")
+            window.location.replace("/prоfile")
           }}
         >
           Upload
